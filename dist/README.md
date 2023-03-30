@@ -30,7 +30,7 @@ import { XMLElement, Attribute } from "xml-element"
 ```
 
 ### The Attribute type
-The `Attribute` type just defines the strucutre of an attribute
+The `Attribute` type just defines the structure of an attribute
 ```ts
 {
     attribute: string // attribute name
@@ -38,10 +38,10 @@ The `Attribute` type just defines the strucutre of an attribute
 }
 ```
 ### The XMLElement Class
-The `XMLElement` class represents a XML element and contains methods to add and remove attributes, children elements and content
+The `XMLElement` class represents a XML element and contains methods to add and remove attributes, children elements, and content
 
 ### XMLElement Constructor
-You can use the constructor to set inital properties for the XML element
+You can use the constructor to set initial properties for the XML element
 
 `element`: A string representing the name of the XML element.
 
