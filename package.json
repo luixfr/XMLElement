@@ -1,6 +1,6 @@
 {
   "name": "xmlelement",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A library to create XML text from JavaScript code",
   "main": "/dist/index.js",
   "scripts": {
