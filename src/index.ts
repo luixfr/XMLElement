@@ -1,1 +1,1 @@
-export { XMLElement, Attributes } from "./XMLElement";
+export { XMLElement, Attribute } from "./XMLElement";

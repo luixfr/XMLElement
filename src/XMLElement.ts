@@ -1,10 +1,10 @@
 export class XMLElement {
   private element: string;
-  private attributes: Attributes[] = [];
+  private attributes: Attribute[] = [];
   private content: string | null;
   private children: XMLElement[] = [];
 
-  constructor(element: string, attributes?: Attributes[], content?: string) {
+  constructor(element: string, attributes?: Attribute[], content?: string) {
     this.element = element;
     if (attributes && attributes.length) this.attributes = attributes;
     if (content) {
@@ -70,7 +70,7 @@ export class XMLElement {
    * Add attribute to the XML element
    * @param attribute
    */
-  addAttribute(attribute: Attributes) {
+  addAttribute(attribute: Attribute) {
     this.attributes.push(attribute);
   }
 
@@ -78,7 +78,7 @@ export class XMLElement {
    * Removes attribute from the element
    * @param attribute Attribute to remove
    */
-  removeAttribute(attribute: Attributes) {
+  removeAttribute(attribute: Attribute) {
     this.attributes.filter((attr) => attr != attribute);
   }
 
@@ -109,7 +109,7 @@ export class XMLElement {
    * Add an array of atrributes to the element
    * @param attributes
    */
-  addAttributes(attributes: Attributes[]) {
+  addAttributes(attributes: Attribute[]) {
     this.attributes.push(...attributes);
   }
 
@@ -145,7 +145,7 @@ export class XMLElement {
   }
 }
 
-export type Attributes = {
+export type Attribute = {
   attribute: string;
   value?: string;
 };
