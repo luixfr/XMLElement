@@ -18,6 +18,7 @@ export class XMLElement {
    */
   setText(content: string) {
     this.content = content;
+    return this;
   }
 
   /**
@@ -41,6 +42,7 @@ export class XMLElement {
    */
   addChild(XMLElement: XMLElement) {
     this.children.push(XMLElement);
+    return this;
   }
 
   /**
@@ -64,6 +66,7 @@ export class XMLElement {
    */
   addChildren(XMLElements: XMLElement[]) {
     this.children.push(...XMLElements);
+    return this;
   }
 
   /**
@@ -72,6 +75,7 @@ export class XMLElement {
    */
   addAttribute(attribute: Attribute) {
     this.attributes.push(attribute);
+    return this;
   }
 
   /**
@@ -111,6 +115,7 @@ export class XMLElement {
    */
   addAttributes(attributes: Attribute[]) {
     this.attributes.push(...attributes);
+    return this;
   }
 
   /**
@@ -121,7 +126,7 @@ export class XMLElement {
     let attributes = "";
     const isSingleTag = !this.content && !this.children.length;
 
-    if (this.attributes) {
+    if (this.attributes.length) {
       attributes = this.attributes.reduce(
         (acc, attr, index) =>
           acc +
