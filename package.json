@@ -1,0 +1,30 @@
+{
+  "name": "xmlelement",
+  "version": "1.0.0",
+  "description": "A library to create XML text from JavaScript code",
+  "main": "/dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist/lib && tsc && tsc --build tsconfig.es5.json"
+  },
+  "files": [
+    "/dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luixfr/XMLElement.git"
+  },
+  "keywords": [
+    "xml",
+    "node"
+  ],
+  "author": "Luixfr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luixfr/XMLElement/issues"
+  },
+  "homepage": "https://github.com/luixfr/XMLElement#readme",
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
+}

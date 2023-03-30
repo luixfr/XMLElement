@@ -1,0 +1,24 @@
+{
+    "name": "xml-element",
+    "version": "1.0.0",
+    "description": "A library to create XML text from JavaScript code",
+    "main": "lib/es5/index.js",
+    "module": "lib/es6/index.js",
+    "files": [
+        "lib"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/luixfr/XMLElement.git"
+    },
+    "keywords": [
+        "xml",
+        "node"
+    ],
+    "author": "Luixfr",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/luixfr/XMLElement/issues"
+    },
+    "homepage": "https://github.com/luixfr/XMLElement#readme"
+}
