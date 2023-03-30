@@ -3,13 +3,11 @@ export class XMLElement {
   private attributes: Attributes[] = [];
   private content: string | null;
   private children: XMLElement[] = [];
-  private isSingleTag: boolean = false;
 
   constructor(element: string, attributes?: Attributes[], content?: string) {
     this.element = element;
-    if (attributes) this.attributes = attributes;
+    if (attributes && attributes.length) this.attributes = attributes;
     if (content) {
-      this.isSingleTag = false;
       this.content = content;
     }
   }
@@ -43,7 +41,6 @@ export class XMLElement {
    */
   addChild(XMLElement: XMLElement) {
     this.children.push(XMLElement);
-    this.isSingleTag = false;
   }
 
   /**
@@ -59,7 +56,6 @@ export class XMLElement {
    */
   removeAllChildren() {
     this.children = [];
-    this.isSingleTag = true;
   }
 
   /**
@@ -123,13 +119,15 @@ export class XMLElement {
    */
   toXML(): string {
     let attributes = "";
+    const isSingleTag = !this.content && !this.children.length;
+
     if (this.attributes) {
       attributes = this.attributes.reduce(
         (acc, attr, index) =>
           acc +
           `${attr.attribute}="${attr.value}"` +
           (index == this.attributes.length - 1 ? "" : " "),
-        ""
+        " "
       );
     }
 
@@ -138,12 +136,10 @@ export class XMLElement {
       children = this.children.reduce((acc, child) => acc + child.toXML(), "");
     }
 
-    let startTag = `<${this.element} ${attributes} ${
-      this.isSingleTag ? "/" : ""
-    }>`;
+    let startTag = `<${this.element}${attributes}${isSingleTag ? "/" : ""}>`;
     let endTag = `</${this.element}>`;
 
-    return this.isSingleTag
+    return isSingleTag
       ? startTag
       : startTag + (this.content ?? "") + children + endTag;
   }
