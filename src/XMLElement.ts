@@ -125,7 +125,7 @@ export class XMLElement {
       attributes = this.attributes.reduce(
         (acc, attr, index) =>
           acc +
-          `${attr.attribute}="${attr.value}"` +
+          `${attr.attribute}${attr.value ? '="' + attr.value + '"' : ""}` +
           (index == this.attributes.length - 1 ? "" : " "),
         " "
       );
@@ -147,5 +147,5 @@ export class XMLElement {
 
 export type Attributes = {
   attribute: string;
-  value: string;
+  value?: string;
 };
